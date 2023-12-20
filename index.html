@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="./js/script.js" defer></script>
+    <script src="./js/animations.js" defer></script>
+</head>
+<body>
+    <div class="title">
+        <h1>Library</h1>
+    </div>
+    <div class="content">
+        <div class="button-container">
+            <button class="add-book">
+                NEW BOOK
+            </button>
+            <div class="error-panel" style="display: none">
+                <p>Please introduce the correct type of input</p>
+                <p>At least 1 character</p>
+                <p>At least 10 pages</p>
+            </div>
+        </div>
+        <div class="modal">
+            <form class="add-book-form" method="post">
+                <button type="button" class="close-modal">✕</button>
+                <h3>Add new book</h3>
+                <input type="text" name="title" id="book-title" placeholder="Title" required>
+                <input type="text" name="author" id="book-author" placeholder="Author" required>
+                <input type="number" name="pages" id="book-pages" placeholder="Number of pages" required>
+                <div class="checkbox">
+                    <label for="have-read">Have you read it?</label>
+                    <input type="checkbox" name="book-read" id="have-read">
+                </div>
+                <button type="button" class="send-form">Add book</button>
+            </form>
+        </div>
+        <div class="bookshelf">
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright © 2024 sadwipe. All rights reserved</p>
+    </div>
+</body>
+</html>

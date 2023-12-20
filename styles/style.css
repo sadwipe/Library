@@ -1,0 +1,197 @@
+:root {
+    --border-rad: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: max(100px, 8vw) 5fr max(50px, 4vw);
+}
+
+.content {
+    min-width: 100%;
+    padding: 10px clamp(20px, 7vw, 100px) 10px clamp(20px, 7vw, 100px)
+}
+
+.title {
+    display: grid;
+    place-content: center;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.button-container {
+    display: grid;
+    place-items: center;
+    margin-bottom: 30px;
+    min-width: 235px;
+}
+
+.add-book {
+    height: 50px;
+    width: 200px;
+    border-radius: var(--border-rad);
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+.bookshelf {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.book-card {
+    background-color: rgb(240, 240, 240);
+    border-radius: var(--border-rad);
+    border: 1px solid black;
+    line-height: 1.2;
+    padding: 30px 20px 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.25rem;
+}
+
+.book-card > button {
+    width: 100%;
+    font-size: 1.25rem;
+    height: 50px;
+    cursor: pointer;
+    border-radius: var(--border-rad);
+}
+
+.footer {
+    display: grid;
+    color: darkgray;
+    place-items: center;
+    font-size: .9rem;
+}
+
+.modal {
+    position: fixed;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.add-book-form {
+    background-color: #fefefe;
+    position: fixed;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    border: 1px solid #888;
+    width: clamp(250px, 30%, 300px); 
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: var(--border-rad);
+}
+
+.add-book-form > input {
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px 8px;
+    border: none;
+    border: 2px solid black;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input[type=checkbox] {
+    cursor: pointer;
+}
+
+form > h3 {
+    font-size: 1.25rem;
+    user-select: none;
+}
+
+.send-form {
+    border-radius: var(--border-rad);
+    height: 30px;
+    width: 100px;
+    border: none;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.close-modal {
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    background-color: white;
+    font-size: 1.25rem;
+    user-select: none;
+}
+
+.checkbox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media only screen and (max-height: 700px) {
+    .add-book-form {
+        top: 55%;
+    }
+}
+
+.finished {
+    background-color: lightgreen;
+}
+
+.remove-card {
+    background-color: rgb(207, 91, 91);
+}
+
+.error-panel {
+    position: relative;
+    top: 23%;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: red;
+    width: 100%;
+    font-size: .7rem;
+    line-height: 1.2;
+    user-select: none;
+}
